@@ -2,10 +2,32 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Local debug with GUI (run model)",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "serve.src.main:m.app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+                "--ws",
+                "websockets"
+            ],
+            "jinja": true,
+            "justMyCode": false,
+            "env": {
+                "LOG_LEVEL": "DEBUG",
+                "PYTHONPATH": "${workspaceFolder}:${PYTHONPATH}",
+                "SLY_APP_DATA_DIR": "${workspaceFolder}/demo_data",
+            }
+        },
+        {
             "name": "Local Debug",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/main.py",
+            "program": "${workspaceFolder}/serve/src/main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "env": {

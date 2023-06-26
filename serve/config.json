@@ -1,0 +1,124 @@
+{
+  "name": "Serve Ultralytics Models",
+  "type": "app",
+  "version": "0.0.1",
+  "categories": [
+    "neural network",
+    "images",
+    "videos",
+    "object detection",
+    "detection & tracking",
+    "serve"
+  ], 
+  "description": "Deploy model as REST API service",
+  "docker_image": "fcakyon/ultralytics:0.0.1",
+  "instance_version": "8.0.123.0",
+  "entrypoint": "python -m uvicorn main:m.app --app-dir ./serve/src --host 0.0.0.0 --port 8000 --ws websockets",
+  "port": 8000,
+  "modal_template": "serve/src/modal.html",
+  "modal_width": 700,
+  "modal_template_state": {
+    "modelWeightsOptions": "pretrained",
+    "selectedModel": "YOLOv8s",
+    "device": "0",
+    "weightsPath": "",
+    "models": [
+      {
+        "config": "",
+        "weightsUrl": "",
+        "Model": "YOLOv8n",
+        "Size": 640,
+        "mAP^val": 37.3,
+        "Speed": 0.99,
+        "Params": 3.2,
+        "FLOPS": 8.7
+      },
+      {
+        "config": "",
+        "weightsUrl": "",
+        "Model": "YOLOv8s",
+        "Size": 640,
+        "mAP^val": 44.9,
+        "Speed": 1.2,
+        "Params": 11.2,
+        "FLOPS": 28.6
+      },
+      {
+        "config": "",
+        "weightsUrl": "",
+        "Model": "YOLOv8m",
+        "Size": 640,
+        "mAP^val": 50.2,
+        "Speed": 1.83,
+        "Params": 25.9,
+        "FLOPS": 78.9
+      },
+      {
+        "config": "",
+        "weightsUrl": "",
+        "Model": "YOLOv8l",
+        "Size": 640,
+        "mAP^val": 52.9,
+        "Speed": 2.39,
+        "Params": 43.7,
+        "FLOPS": 165.2
+      },
+      {
+        "config": "",
+        "weightsUrl": "",
+        "Model": "YOLOv8x",
+        "Size": 640,
+        "mAP^val": 53.9,
+        "Speed": 3.53,
+        "Params": 68.2,
+        "FLOPS": 257.8
+      }
+    ],
+    "modelColumns": [
+      {
+        "key": "Model",
+        "title": "Model",
+        "subtitle": null
+      },
+      {
+        "key": "Size",
+        "title": "Size",
+        "subtitle": "(pixels)"
+      },
+      {
+        "key": "mAP^val",
+        "title": "mAP<sub>val</sub>",
+        "subtitle": "0.5:0.95"
+      },
+      {
+        "key": "Speed",
+        "title": "Speed",
+        "subtitle": "V100 (ms)"
+      },
+      {
+        "key": "Params",
+        "title": "Params",
+        "subtitle": "(M)"
+      },
+      {
+        "key": "FLOPS",
+        "title": "FLOPS",
+        "subtitle": "640 (B)"
+      }
+    ]
+  },
+  "task_location": "application_sessions",
+  "icon": "https://i.imgur.com/2U6HufM.png",
+  "icon_cover": true,
+  "isolate": true,
+  "need_gpu": true,
+  "headless": true,
+  "session_tags": [
+    "deployed_nn"
+  ],
+  "poster": "https://user-images.githubusercontent.com/106374579/183668719-361e275f-e6f8-47e5-994d-3341c0e6241f.png",
+  "community_agent": false,
+  "license": {
+    "type": "AGPL-3.0" 
+  }
+}

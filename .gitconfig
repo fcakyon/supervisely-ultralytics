@@ -1,0 +1,12 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = fcakyon
+	email = fcakyon@gmail.com
+[includeIf "gitdir:~/dev/bitbucket/"]
+    path = ~/dev/bitbucket/.gitconfig
+[credential]
+	helper = "!f() { /usr/src/app/.vscode-server/bin/695af097c7bd098fbf017ce3ac85e09bbc5dda06/node /tmp/vscode-remote-containers-8d1ebd1f-841d-4890-808c-153824bbfb77.js git-credential-helper $*; }; f"

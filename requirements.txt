@@ -1,8 +1,3 @@
---extra-index-url https://download.pytorch.org/whl/cu113
 supervisely==6.69.70
-torch==1.12.1+cu113
-torchvision==0.13.1+cu113
 ffmpeg-python==0.2.0
 PyYAML==5.4.1
-# git+https://github.com/facebookresearch/detectron2.git
-# git+https://github.com/open-mmlab/cocoapi.git#subdirectory=pycocotools

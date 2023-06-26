@@ -1,0 +1,26 @@
+{
+    "name": "Ultralytics Env",
+    "dockerFile": "../docker/Dockerfile",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/supervisely-app/,type=bind,consistency=cached"
+    ],
+    "runArgs": [
+        "-it",
+        "--ipc=host",
+        "--gpus",
+        "all"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                },
+                "extensions": []
+            }
+        }
+    }
+}

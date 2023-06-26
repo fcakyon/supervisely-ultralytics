@@ -1,5 +1,5 @@
-# Integrate custom object detection model into Supervisely
+# Serve YOLOv5
 
-TODO: 
-  "icon": "some url",
-  "poster": "some url",
+# Overview
+
+App deploys Ultralytics YOLO models (pretrained on COCO or custom one) as REST API service. Serve app is the simplest way how any model can be integrated into Supervisely.
